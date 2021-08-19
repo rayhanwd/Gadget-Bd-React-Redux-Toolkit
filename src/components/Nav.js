@@ -5,23 +5,34 @@ import { BsFillBagFill } from "react-icons/bs";
 const Nav = () => {
     const { totalQuantities } = useSelector(state => state.CartReducer)
     return (
-        <div className="nav">
-            <div className="container">
-                <div className="nav__container">
-                    <div className="nav__left">
-                        <Link to="/"><img src="/images/logo.png" alt="logo" /></Link>
-                    </div>
-                    <div className="nav__right">
-                        <Link to="/cart">
+        <div class="ui secondary  menu">
+  <a class="active item">
+    Home
+  </a>
+  <a class="item">
+    Messages
+  </a>
+  <a class="item">
+    Friends
+  </a>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search link icon"></i>
+      </div>
+      <Link to="/cart">
                             <div className="basket">
                                 <BsFillBagFill className="cart-icon" />
                                 <span>{totalQuantities}</span>
                             </div>
                         </Link>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    <a class="ui item">
+      Logout
+    </a>
+  </div>
+</div>
     )
 }
 
